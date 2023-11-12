@@ -16,7 +16,7 @@
 
     if (!empty($_POST['query'])) { 
         $connection = new Connection('localhost', 'root', '', 'blog');
-        $connection->connOpening();
+        $connection->openConnection();
 
         $search_result = search($_POST['query']); 
 
@@ -31,5 +31,5 @@
             echo "Ошибка: " . mysqli_error($connection->connection);
         }
 
-        $connection->connClosing();
+        $connection->closeConnection();
     }
