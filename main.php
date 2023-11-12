@@ -6,12 +6,12 @@
     $comments = new Parser('https://jsonplaceholder.typicode.com/comments');
 
     $connection = new Connection('localhost', 'root', '', 'blog');
-    $connection->connOpening();
+    $connection->openConnection();
 
     $posts->parseAndLoadPosts($connection->connection);
     $comments->parseAndLoadComments($connection->connection);
 
     echo 'Загружено ' . $posts->count . ' записей и ' . $comments->count . ' комментариев';
 
-    $connection->connClosing();
+    $connection->closeConnection();
     
