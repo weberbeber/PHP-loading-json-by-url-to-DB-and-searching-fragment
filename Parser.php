@@ -54,7 +54,8 @@
                 $this->email = $value['email'];
                 $this->body = $value['body'];
 
-                $sql = "INSERT INTO comments (postId, id, name, email, body) VALUES ('$this->postId', DEFAULT, '$this->name', '$this->email', '$this->body')";
+                $sql = "INSERT INTO comments (postId, id, name, email, body) VALUES 
+                ('$this->postId', DEFAULT, '$this->name', '$this->email', '$this->body')";
     
                 if(mysqli_query($conn, $sql)) {
                     $this->count++;
