@@ -17,7 +17,7 @@
         }
 
         // Открыть подключение
-        function connOpening()
+        function openConnection()
         {
             $this->connection = mysqli_connect($this->servername, $this->username, $this->password, $this->db);
             // Проверка соединения
@@ -27,7 +27,7 @@
         }        
 
         // Закрыть подключение
-        function connClosing()
+        function closeConnection()
         {
             mysqli_close($this->connection);
         }
